@@ -2,48 +2,28 @@
 
 An intelligent, end-to-end web application developed to simplify, model, and automate the debt management and financial recovery process for borrowers. The platform enables users to track loan details, compute vital financial indexes (DTI & surplus), forecast creditor settlement thresholds, and generate context-aware legal negotiation letters using Google Gemini AI models.
 
-Developed as a state-of-the-art **NLP (Natural Language Processing) Course Project** by **Bhupesh Reddy**.
+Developed as a state-of-the-art **NLP (Natural Language Processing) Course Project** by **Bhupesh**.
 
 ---
 
-## 🚀 System Architecture & How It Works
+## 👥 Project Team & Developer
 
-Below is the workflow of the platform, showing how user data is parsed, calculated, and processed through NLP models:
+| Developer Name | Role | Core Responsibilities |
+| :--- | :--- | :--- |
+| **Bhupesh** | **Lead Developer & NLP Architect** | End-to-end system design, React (Vite) frontend components, Claymorphism Vanilla CSS styling, FastAPI backend architecture, SQLAlchemy SQLite ORM database mapping, Debt Stress algorithms, and Gemini AI letter generation prompts. |
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User as Borrower (User)
-    participant FE as React Frontend (Claymorphism UI)
-    participant BE as FastAPI Backend Service
-    participant DB as SQLite Database (SQLAlchemy)
-    participant LLM as Google Gemini 2.5 Flash API
+---
 
-    User->>FE: Input Credentials & Sign In
-    FE->>BE: POST /api/auth/login
-    BE->>DB: Query User & verify bcrypt hash
-    DB-->>BE: User Record Found
-    BE-->>FE: Return JWT Access Token
-    
-    User->>FE: Add Delinquent Loan / Budget Details
-    FE->>BE: POST /api/loans (Auth Bearer Token)
-    BE->>DB: Insert loan record
-    DB-->>BE: Record Saved
-    
-    User->>FE: Navigate to Dashboard / Predictor
-    FE->>BE: GET /api/finance/analysis
-    BE->>BE: Compute DTI Ratio, Cash Surplus, & multi-factor Debt Stress Score
-    BE-->>FE: Return JSON Financial Analysis
-    
-    User->>FE: Select Loan & Input Hardship Context (Job Loss, etc.)
-    FE->>BE: POST /api/finance/generate-letter
-    BE->>LLM: Direct HTTP POST with custom JSON prompt template (hardship details + balance + creditor)
-    Note over LLM: NLP Engine processes context & formats formal letter structure
-    LLM-->>BE: Return JSON (letter_content & strategic_notes)
-    BE->>DB: Save generated letter to negotiation history
-    BE-->>FE: Serve generated letter to user dashboard
-    FE->>User: Display letter preview with Copy & Download options
-```
+## 📊 Modeled Debt Stress Levels
+
+The application computes a multi-factor **Debt Stress Score** (0-100) based on DTI, monthly cash surplus, and delinquency duration, classifying users into four operational recovery states:
+
+| Stress Level | Score Range | Description | Recommended AI Action |
+| :--- | :--- | :--- | :--- |
+| 🟢 **Low** | `0 - 19` | Total EMI is under 20% of income, positive monthly surplus, no delinquent accounts. | Maintain current payments; set aside emergency savings. |
+| 🟡 **Moderate** | `20 - 44` | EMI is 20%-36% of income, small cash surplus, 1-2 months delinquent. | Monitor balances; run early settlement simulations. |
+| 🟠 **High** | `45 - 69` | EMI is 36%-50% of income, negative surplus, 3-5 months delinquent. | Draft temporary payment pause or interest reduction letters. |
+| 🔴 **Critical** | `70 - 100` | EMI exceeds 50% of income, severe monthly cash deficit, 6+ months delinquent. | Draft lump-sum settlement negotiation letters immediately. |
 
 ---
 
@@ -151,7 +131,7 @@ Simply double-click the **`start_app.bat`** file located inside the `Project Fil
 *   Start the React development server on `http://127.0.0.1:5175`.
 *   Open your web browser directly to the dashboard.
 
-### 3. Log In (Pre-seeded Accounts)
+### 3. Demo Login Credentials
 *   **Email**: `test@example.com`
 *   **Password**: `password123`
 
@@ -160,7 +140,7 @@ Simply double-click the **`start_app.bat`** file located inside the `Project Fil
 ## 🎓 Academic Disclaimer & License
 
 ### Project Context
-This application was built, designed, and verified by **Bhupesh Reddy** as part of an **NLP (Natural Language Processing) Course Project**. The system demonstrates the practical integration of Large Language Models (Gemini) inside consumer-facing financial web applications, utilizing zero-shot text formatting, prompt schemas, and heuristic mathematical modeling.
+This application was built, designed, and verified by **Bhupesh** as part of an **NLP (Natural Language Processing) Course Project**. The system demonstrates the practical integration of Large Language Models (Gemini) inside consumer-facing financial web applications, utilizing zero-shot text formatting, prompt schemas, and heuristic mathematical modeling.
 
 ### License
 This project is licensed under the **MIT License** - see below for details:
@@ -168,7 +148,7 @@ This project is licensed under the **MIT License** - see below for details:
 ```text
 MIT License
 
-Copyright (c) 2026 Bhupesh Reddy
+Copyright (c) 2026 Bhupesh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
