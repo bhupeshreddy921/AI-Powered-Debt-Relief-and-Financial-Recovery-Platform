@@ -20,7 +20,7 @@ def seed_db():
         hashed_password = auth.get_password_hash("password123")
         user = models.User(
             email=test_email,
-            username="Alex Miller",
+            username="Bhupesh",
             hashed_password=hashed_password,
             monthly_income=4800.0,
             monthly_expenses=2100.0

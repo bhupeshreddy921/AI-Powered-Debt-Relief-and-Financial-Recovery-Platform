@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DollarSign, ShieldAlert, Sparkles, TrendingUp, Edit2, Check, RefreshCw } from 'lucide-react';
+import { DollarSign, ShieldAlert, Sparkles, TrendingUp, Edit2, Check, RefreshCw, User } from 'lucide-react';
 
 export default function Dashboard({ token, onNavigate }) {
   const [loading, setLoading] = useState(true);
@@ -310,6 +310,47 @@ export default function Dashboard({ token, onNavigate }) {
               )}
             </div>
           ))}
+
+          {/* Debt Stress Levels Guide */}
+          <div className="clay-card" style={{ marginTop: '10px' }}>
+            <h4 style={{ margin: '0 0 12px 0', fontFamily: 'Outfit', fontSize: '16px', fontWeight: 700 }}>Debt Stress Levels</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '12px', fontWeight: 600 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 10px', borderRadius: '10px', backgroundColor: '#f0faf6' }}>
+                <span style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: 'var(--clay-green)' }} />
+                <span style={{ color: 'var(--clay-green-dark)', flex: 1 }}>Low Stress (0 - 19)</span>
+                <span style={{ color: 'var(--text-secondary)' }}>DTI &lt; 20%</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 10px', borderRadius: '10px', backgroundColor: '#fffbf5' }}>
+                <span style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: 'var(--clay-orange)' }} />
+                <span style={{ color: 'var(--clay-orange-dark)', flex: 1 }}>Moderate Stress (20 - 44)</span>
+                <span style={{ color: 'var(--text-secondary)' }}>DTI 20-36%</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 10px', borderRadius: '10px', backgroundColor: '#fff6f6' }}>
+                <span style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: 'var(--clay-coral)' }} />
+                <span style={{ color: 'var(--clay-coral-dark)', flex: 1 }}>High Stress (45 - 69)</span>
+                <span style={{ color: 'var(--text-secondary)' }}>DTI 36-50%</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 10px', borderRadius: '10px', backgroundColor: '#fff1f1' }}>
+                <span style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ff6666' }} />
+                <span style={{ color: '#d32f2f', flex: 1, fontWeight: 700 }}>Critical Stress (70 - 100)</span>
+                <span style={{ color: 'var(--text-secondary)' }}>DTI &gt; 50%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Project Team Card */}
+          <div className="clay-card clay-card-blue" style={{ marginTop: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+              <User size={18} color="#7792fb" />
+              <h4 style={{ margin: 0, fontFamily: 'Outfit', fontSize: '16px', fontWeight: 700 }}>Lead Developer</h4>
+            </div>
+            <p style={{ fontSize: '13px', margin: 0, fontWeight: 700, color: 'var(--text-main)' }}>
+              Bhupesh Reddy
+            </p>
+            <p style={{ fontSize: '11px', margin: '4px 0 0 0', color: 'var(--text-secondary)', fontWeight: 500 }}>
+              NLP Course Project Developer
+            </p>
+          </div>
         </div>
 
         {/* Right Side: Active Delinquent Accounts */}
