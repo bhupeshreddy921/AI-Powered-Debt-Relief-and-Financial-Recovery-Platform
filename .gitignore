@@ -1,0 +1,29 @@
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python Caches & Env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Databases & Environment
+*.db
+*.sqlite3
+*.sqlite
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
