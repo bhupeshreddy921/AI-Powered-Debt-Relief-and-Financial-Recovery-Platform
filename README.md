@@ -27,6 +27,59 @@ The application computes a multi-factor **Debt Stress Score** (0-100) based on D
 
 ---
 
+## 📂 Project Structure
+
+This repository follows the structured phase submission template for AI/ML and Generative AI projects:
+
+```text
+AI-Powered-Debt-Relief-and-Financial-Recovery-Platform/
+├── README.md                          <- Project overview and documentation (This file)
+├── .gitignore                         <- Rules to ignore local databases, build files, and node packages
+├── 1. Brainstorming & Ideation/       <- Project brainstorming notes and initial concepts
+│   └── .gitkeep
+├── 2. Requirement Analysis/           <- Detailed requirements and feasibility analysis
+│   └── .gitkeep
+├── 3. Project Design Phase/           <- Architectural designs and database diagrams
+│   └── .gitkeep
+├── 4. Project Planning Phase/         <- Project schedules and plan worksheets
+│   └── .gitkeep
+├── 5. Project Development Phase/      <- Complete functional application codebase
+│   ├── index.html                     <- Single-page application template wrapper
+│   ├── vite.config.js                 <- React Vite configuration
+│   ├── package.json                   <- Node dependencies (React, Lucide-React, Vite)
+│   ├── start_app.bat                  <- Windows double-clickable launcher script
+│   ├── src/                           <- React Frontend Source Code
+│   │   ├── main.jsx                   
+│   │   ├── App.jsx                    
+│   │   ├── index.css                  
+│   │   └── pages/                     
+│   │       ├── Auth.jsx               
+│   │       ├── Dashboard.jsx          
+│   │       ├── Loans.jsx              
+│   │       ├── SettlementPredictor.jsx 
+│   │       └── LetterGenerator.jsx    
+│   └── backend/                       <- FastAPI Backend Source Code
+│       ├── requirements.txt           
+│       ├── main.py                    
+│       ├── auth.py                    
+│       ├── database.py                
+│       ├── models.py                  
+│       ├── schemas.py                 
+│       ├── financial_processing.py    
+│       ├── settlement_prediction.py   
+│       ├── gemini_service.py          
+│       ├── seed.py                    
+│       └── test_api.py                
+├── 6.Project Testing/                 <- Backend unit tests and frontend validation scripts
+│   └── .gitkeep
+├── 7.Project Documentation/           <- Project documentation and slide reports
+│   └── readme.md
+└── 8.Project Demonstration/           <- Demonstration video links and screencasts
+    └── readme.md
+```
+
+---
+
 ## 🛠️ Technical Stack
 
 The platform is engineered using modern, high-performance web frameworks and database structures:
@@ -126,7 +179,7 @@ cd AI-Powered-Debt-Relief-and-Financial-Recovery-Platform
 ```
 
 ### 2. Start the App Launcher
-Simply double-click the **`start_app.bat`** file located inside the `Project Files` directory. It will:
+Simply double-click the **`start_app.bat`** file located inside the `5. Project Development Phase` directory. It will:
 *   Automatically start the FastAPI backend on `http://127.0.0.1:8000`.
 *   Start the React development server on `http://127.0.0.1:5175`.
 *   Open your web browser directly to the dashboard.

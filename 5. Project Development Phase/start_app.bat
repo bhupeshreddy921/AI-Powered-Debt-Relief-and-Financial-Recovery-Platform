@@ -12,7 +12,7 @@ start cmd /k "title React Frontend && cd /d %~dp0 && npm run dev -- --host 127.0
 
 echo.
 echo Launching web browser in 3 seconds...
-timeout /t 3 >nul
+ping 127.0.0.1 -n 4 >nul
 start http://127.0.0.1:5175
 
 echo.
